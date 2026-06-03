@@ -36,9 +36,13 @@ gcc -O2 -Wall -Wextra -pthread src/*.c -o meu_exe -lm && ./meu_exe 4
 Os valores abaixo representam a média de 5 execuções para cada configuração, garantindo a estabilidade da medição.
 
 Threads,  Tempo Médio (s),  Speedup,  Eficiência
+
 1 (seq),  "2,0080",         "1,00x",  "100,0%"
+
 2      ,  "0,8283",         "2,42x",  "121,0%*"
+
 4      ,  "0,4368",         "4,60x",  "115,0%*"
+
 8      ,  "0,4412",         "4,55x",  "56,9%"
 
 ## 5. Discussão de escalabilidade
