@@ -1,1 +1,1 @@
-# Projeto-LP2---Trabalho-Pr-tico
+# Projeto-LP2---Trabalho-Pratico
