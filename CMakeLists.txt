@@ -1,16 +1,13 @@
-cmake_minimum_required(VERSION 3.16)
-project(ProjetoLP2)
+cmake_minimum_required(VERSION 3.10)
+project(MatrixMultiplication)
 
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -Wall -Wextra")
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+# Busca e linka a biblioteca de threads
+find_package(Threads REQUIRED)
 
-file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c")
-
-if(SOURCES)
-    add_executable(${PROJECT_NAME} ${SOURCES})
-else()
-    message(STATUS "No source files found in src/. Add .cpp or .c files to src/ to build.")
-endif()
+# Inclui os fontes e gera o executável
+file(GLOB SOURCES "src/*.c")
+add_executable(meu_exe ${SOURCES})
+target_link_libraries(meu_exe PRIVATE Threads::Threads)
